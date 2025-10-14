@@ -6,7 +6,7 @@
 /*   By: bedantas <bedantas@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/14 12:09:45 by bedantas          #+#    #+#             */
-/*   Updated: 2025/10/14 14:23:44 by bedantas         ###   ########.fr       */
+/*   Updated: 2025/10/14 18:48:54 by bedantas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,6 +79,31 @@ int	mouse_hook(int button, int x, int y, void *param)
 	return (0);
 }
 
+void	color_func(t_access *acs, int x, int y)
+{
+	char	*pixel;
+	int		i;
+	int		t;
+	int		color;
+
+	color = 0;
+	pixel = acs->img_pointer + (y * acs->line_len + x * (acs->bits_px / 8));
+	if (acs->fract == 1)
+		i = if_mandelbroot(acs);
+	else if (acs->fract == 2)
+		i = if_julia(acs);
+	if (i == -1)
+		color = 0x000000;
+	else
+	{
+		t = (int)(256.0 * sqrt((double)i / acs->max_iter));
+		if (t > 255)
+			t = 255;
+		color = (t << 16) | (t << 8) | t;
+	}
+	*(unsigned int *)pixel = color;
+}
+
 void	put_image(t_access *acs)
 {
 	int	x;
@@ -92,7 +117,7 @@ void	put_image(t_access *acs)
 		while (x < WIDTH)
 		{
 			acs->re = re_im(acs, x, y, 0);
-			color_func_mandelbroot(acs, x, y);
+			color_func(acs, x, y);
 			x++;
 		}
 		y++;

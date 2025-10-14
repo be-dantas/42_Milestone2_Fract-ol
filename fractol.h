@@ -6,7 +6,7 @@
 /*   By: bedantas <bedantas@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/11 13:21:25 by wedos-sa          #+#    #+#             */
-/*   Updated: 2025/10/14 14:18:16 by bedantas         ###   ########.fr       */
+/*   Updated: 2025/10/14 18:28:47 by bedantas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,10 +24,11 @@
 
 typedef struct s_access
 {
-	int		x;
-	int		y;
 	double	re;
 	double	im;
+	double	j1;
+	double	j2;
+	int		fract;
 
 	void	*connec;
 	void	*window;
@@ -48,21 +49,28 @@ typedef struct s_access
 	double	new_im;
 }	t_access;
 
-//valid_inputs.c
-int		valid_input(int argc, char **argv);
+//fractol.c
+int		main(int argc, char **argv);
 
-// fractol_utils.c
+//valid_inputs.c
+void	input_error(int flag);
+void	valid_input(int ac, char **av, t_access *acs);
+
+//valid_julia.c
+int		is_double(char *av);
+double	for_double(int atoi, char *av);
+double	atoi_double(char *av);
+int		valid_julia(int ac, char **av);
+
+//fractol_utils.c
 double	re_im(t_access *acs, int x, int y, int flag);
 int		key_hook(int keycode, void *param);
 int		mouse_hook(int button, int x, int y, void *param);
+void	color_func(t_access *acs, int x, int y);
 void	put_image(t_access *acs);
 
-//mandelbroot.c
-void	color_func_mandelbroot(t_access *acs, int x, int y);
-int		if_mandelbroot(double re, double im, int max_iter);
-
-//julia.c
-void	color_func_julia(t_access *acs, int x, int y);
-int		if_julia(double re, double im, int max_iter);
+//mand_and_julia.c
+int		if_mandelbroot(t_access *acs);
+int		if_julia(t_access *acs);
 
 #endif
