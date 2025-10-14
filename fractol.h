@@ -6,7 +6,7 @@
 /*   By: bedantas <bedantas@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/11 13:21:25 by wedos-sa          #+#    #+#             */
-/*   Updated: 2025/10/13 18:49:08 by bedantas         ###   ########.fr       */
+/*   Updated: 2025/10/14 14:18:16 by bedantas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,12 +17,15 @@
 # include "libft/libft.h"
 # include <unistd.h>
 # include <stdlib.h>
+# include <math.h>
 
 # define WIDTH 1000
 # define HEIGHT 1000
 
 typedef struct s_access
 {
+	int		x;
+	int		y;
 	double	re;
 	double	im;
 
@@ -45,12 +48,21 @@ typedef struct s_access
 	double	new_im;
 }	t_access;
 
-//mandelbroot
-void	color_func(t_access *acs, int x, int y);
-int		if_mandelbroot(double re, double im, int max_iter);
+//valid_inputs.c
+int		valid_input(int argc, char **argv);
+
+// fractol_utils.c
 double	re_im(t_access *acs, int x, int y, int flag);
 int		key_hook(int keycode, void *param);
 int		mouse_hook(int button, int x, int y, void *param);
 void	put_image(t_access *acs);
+
+//mandelbroot.c
+void	color_func_mandelbroot(t_access *acs, int x, int y);
+int		if_mandelbroot(double re, double im, int max_iter);
+
+//julia.c
+void	color_func_julia(t_access *acs, int x, int y);
+int		if_julia(double re, double im, int max_iter);
 
 #endif
