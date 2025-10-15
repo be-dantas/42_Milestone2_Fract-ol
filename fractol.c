@@ -6,7 +6,7 @@
 /*   By: bedantas <bedantas@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/11 13:18:14 by wedos-sa          #+#    #+#             */
-/*   Updated: 2025/10/14 18:46:01 by bedantas         ###   ########.fr       */
+/*   Updated: 2025/10/15 15:39:50 by bedantas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ int	main(int argc, char **argv)
 {
 	t_access	acs;
 
-	valid_input(argc, argv, &acs);
+	acs.fract = valid_input(argc, argv, &acs);
 	acs.connec = mlx_init();
 	acs.window = mlx_new_window(acs.connec, WIDTH, HEIGHT, "Fract-ol");
 	acs.img = mlx_new_image(acs.connec, WIDTH, HEIGHT);
@@ -29,6 +29,7 @@ int	main(int argc, char **argv)
 	put_image(&acs);
 	mlx_mouse_hook(acs.window, mouse_hook, &acs);
 	mlx_key_hook(acs.window, key_hook, &acs);
+	mlx_hook(acs.window, 17, 0, close_window, &acs);
 	mlx_loop(acs.connec);
 	return (0);
 }
