@@ -6,7 +6,7 @@
 /*   By: bedantas <bedantas@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/14 12:13:29 by bedantas          #+#    #+#             */
-/*   Updated: 2025/10/15 16:24:23 by bedantas         ###   ########.fr       */
+/*   Updated: 2025/10/15 17:35:13 by bedantas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,7 @@ int	valid_julia(int ac, char **av, t_access *acs)
 
 	res_s1 = ft_is_double(av[2]);
 	res_s2 = ft_is_double(av[3]);
-	if (res_s1 == 0 && res_s2 == 0)
+	if (res_s1 == 0 || res_s2 == 0)
 		input_error(2);
 	if (res_s1 == 1)
 		acs->j1 = (double)ft_atoi(av[2]);
@@ -56,7 +56,8 @@ int	valid_input(int ac, char **av, t_access *acs)
 {
 	if (ac == 1)
 		input_error(1);
-	if (ft_strncmp(av[1], "mandelbroot", 11) == 0 && ac == 2)
+	if (ft_strncmp(av[1], "mandelbroot", 11) == 0
+		&& av[1][11] == '\0' && ac == 2)
 		return (1);
 	else if (ft_strncmp(av[1], "julia", 5) == 0 && ac == 4)
 		return (valid_julia(ac, av, acs));
