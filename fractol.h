@@ -6,7 +6,7 @@
 /*   By: bedantas <bedantas@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/11 13:21:25 by wedos-sa          #+#    #+#             */
-/*   Updated: 2025/10/16 11:31:33 by bedantas         ###   ########.fr       */
+/*   Updated: 2025/10/16 13:31:38 by bedantas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,7 +49,7 @@ typedef struct s_access
 	double	new_im;
 }	t_access;
 
-//fractol.c
+//main.c
 int		main(int argc, char **argv);
 
 //fractol_utils.c
