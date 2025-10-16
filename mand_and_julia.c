@@ -6,13 +6,13 @@
 /*   By: bedantas <bedantas@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/11 13:18:14 by wedos-sa          #+#    #+#             */
-/*   Updated: 2025/10/15 13:09:34 by bedantas         ###   ########.fr       */
+/*   Updated: 2025/10/16 14:33:14 by bedantas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fractol.h"
 
-int	if_mandelbroot(t_access *acs)
+int	if_mandelbrot(t_access *acs)
 {
 	double	a;
 	double	b;

@@ -6,7 +6,7 @@
 /*   By: bedantas <bedantas@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/11 13:21:25 by wedos-sa          #+#    #+#             */
-/*   Updated: 2025/10/16 13:31:38 by bedantas         ###   ########.fr       */
+/*   Updated: 2025/10/16 14:33:18 by bedantas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,7 +63,7 @@ int		valid_julia(char **av, t_access *acs);
 int		valid_input(int ac, char **av, t_access *acs);
 
 //mand_and_julia.c
-int		if_mandelbroot(t_access *acs);
+int		if_mandelbrot(t_access *acs);
 int		if_julia(t_access *acs);
 
 //mouse_key.c

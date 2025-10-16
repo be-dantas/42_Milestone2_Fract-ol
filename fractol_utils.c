@@ -6,7 +6,7 @@
 /*   By: bedantas <bedantas@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/14 12:09:45 by bedantas          #+#    #+#             */
-/*   Updated: 2025/10/16 13:34:50 by bedantas         ###   ########.fr       */
+/*   Updated: 2025/10/16 14:34:26 by bedantas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ void	color_func(t_access *acs, int x, int y)
 	color = 0;
 	pixel = acs->img_pointer + (y * acs->line_len + x * (acs->bits_px / 8));
 	if (acs->fract == 1)
-		i = if_mandelbroot(acs);
+		i = if_mandelbrot(acs);
 	else if (acs->fract == 2)
 		i = if_julia(acs);
 	if (i == acs->max_iter)
