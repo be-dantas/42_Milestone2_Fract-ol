@@ -84,6 +84,7 @@ Executar Julia:
 ./fractol julia -0.7 0.27015
 ```
 
+
 Controles:
 - 🖱️ Scroll → Zoom in/out
 - ⬅️ ➡️ ⬆️ ⬇️ → Movimentação
