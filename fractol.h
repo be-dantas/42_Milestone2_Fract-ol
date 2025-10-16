@@ -6,7 +6,7 @@
 /*   By: bedantas <bedantas@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/11 13:21:25 by wedos-sa          #+#    #+#             */
-/*   Updated: 2025/10/15 15:39:35 by bedantas         ###   ########.fr       */
+/*   Updated: 2025/10/16 11:31:33 by bedantas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,18 +57,18 @@ double	re_im(t_access *acs, int x, int y, int flag);
 void	color_func(t_access *acs, int x, int y);
 void	put_image(t_access *acs);
 
-//mouse_key.c
-int		close_window(t_access *access);
-int		key_hook(int keycode, void *param);
-int		mouse_hook(int button, int x, int y, void *param);
-
 //valid_inputs.c
 void	input_error(int flag);
-int		valid_julia(int ac, char **av, t_access *acs);
+int		valid_julia(char **av, t_access *acs);
 int		valid_input(int ac, char **av, t_access *acs);
 
 //mand_and_julia.c
 int		if_mandelbroot(t_access *acs);
 int		if_julia(t_access *acs);
+
+//mouse_key.c
+int		close_window(t_access *access);
+int		key_hook(int keycode, void *param);
+int		mouse_hook(int button, int x, int y, void *param);
 
 #endif

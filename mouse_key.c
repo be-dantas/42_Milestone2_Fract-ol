@@ -6,7 +6,7 @@
 /*   By: bedantas <bedantas@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/15 15:30:48 by bedantas          #+#    #+#             */
-/*   Updated: 2025/10/15 16:32:54 by bedantas         ###   ########.fr       */
+/*   Updated: 2025/10/16 11:08:38 by bedantas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ int	key_hook(int keycode, void *param)
 	acs = (t_access *)param;
 	move_speed = 0.1 / acs->zoom;
 	if (keycode == 65307)
-		exit(0);
+		close_window(acs);
 	else if (keycode == 65361)
 		acs->pos_x -= move_speed;
 	else if (keycode == 65363)

@@ -6,7 +6,7 @@
 /*   By: bedantas <bedantas@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/14 12:09:45 by bedantas          #+#    #+#             */
-/*   Updated: 2025/10/15 15:31:13 by bedantas         ###   ########.fr       */
+/*   Updated: 2025/10/16 11:24:11 by bedantas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,7 @@ void	color_func(t_access *acs, int x, int y)
 	int		t;
 	int		color;
 
+	i = 0;
 	color = 0;
 	pixel = acs->img_pointer + (y * acs->line_len + x * (acs->bits_px / 8));
 	if (acs->fract == 1)

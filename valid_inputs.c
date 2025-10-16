@@ -6,7 +6,7 @@
 /*   By: bedantas <bedantas@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/14 12:13:29 by bedantas          #+#    #+#             */
-/*   Updated: 2025/10/15 17:35:13 by bedantas         ###   ########.fr       */
+/*   Updated: 2025/10/16 11:31:34 by bedantas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ void	input_error(int flag)
 	}
 }
 
-int	valid_julia(int ac, char **av, t_access *acs)
+int	valid_julia(char **av, t_access *acs)
 {
 	int			res_s1;
 	int			res_s2;
@@ -56,11 +56,11 @@ int	valid_input(int ac, char **av, t_access *acs)
 {
 	if (ac == 1)
 		input_error(1);
-	if (ft_strncmp(av[1], "mandelbroot", 11) == 0
-		&& av[1][11] == '\0' && ac == 2)
+	if (ft_strncmp(av[1], "mandelbroot", 12) == 0 && ac == 2)
 		return (1);
-	else if (ft_strncmp(av[1], "julia", 5) == 0 && ac == 4)
-		return (valid_julia(ac, av, acs));
+	else if (ft_strncmp(av[1], "julia", 6) == 0 && ac == 4)
+		return (valid_julia(av, acs));
 	else
 		input_error(1);
+	return (0);
 }
