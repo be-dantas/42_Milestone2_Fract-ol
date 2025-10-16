@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   valid_inputs.c                                     :+:      :+:    :+:   */
+/*   valid_inputs_bonus.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bedantas <bedantas@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/14 12:13:29 by bedantas          #+#    #+#             */
-/*   Updated: 2025/10/16 11:31:34 by bedantas         ###   ########.fr       */
+/*   Updated: 2025/10/16 14:46:09 by bedantas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ void	input_error(int flag)
 	if (flag == 1)
 	{
 		write (1, "Inputs valids:\n", 15);
-		write (1, "./fractol mandelbroot\n", 22);
+		write (1, "./fractol mandelbrot\n", 21);
 		write (1, "./fractol julia 000 000\n", 24);
 		exit(EXIT_FAILURE);
 	}
@@ -56,7 +56,7 @@ int	valid_input(int ac, char **av, t_access *acs)
 {
 	if (ac == 1)
 		input_error(1);
-	if (ft_strncmp(av[1], "mandelbroot", 12) == 0 && ac == 2)
+	if (ft_strncmp(av[1], "mandelbrot", 11) == 0 && ac == 2)
 		return (1);
 	else if (ft_strncmp(av[1], "julia", 6) == 0 && ac == 4)
 		return (valid_julia(av, acs));
